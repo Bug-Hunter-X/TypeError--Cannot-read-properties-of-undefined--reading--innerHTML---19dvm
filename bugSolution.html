@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv"></div>
+  <script>
+    const div = document.getElementById('myDiv');
+    // Check if the element exists before accessing its properties.
+    if (div) {
+      //Check if property exist before accessing it
+      if(div.hasOwnProperty('innerHTML')){
+        div.innerHTML = 'Hello';
+      } else {
+        console.error('Property innerHTML does not exist');
+      }
+    } else {
+      console.error('Element with id "myDiv" not found.');
+    }
+  </script>
+</body>
+</html>
